@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>通过KVM制作OpenStack镜像</title>
+      <link href="/posts/19535/"/>
+      <url>/posts/19535/</url>
+      
+        <content type="html"><![CDATA[<h2 id="在Ubuntu20-04上安装KVM"><a href="#在Ubuntu20-04上安装KVM" class="headerlink" title="在Ubuntu20.04上安装KVM"></a>在Ubuntu20.04上安装KVM</h2><p>运行以下命令以安装KVM和其他虚拟化管理软件包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager</span><br></pre></td></tr></table></figure><ul><li><code>qemu-kvm</code> -为KVM管理程序提供硬件仿真的软件。</li><li><code>libvirt-daemon-system</code> -用于将libvirt守护程序作为系统服务运行的配置文件。</li><li><code>libvirt-clients</code> -用于管理虚拟化平台的软件。</li><li><code>bridge-utils</code> -一组用于配置以太网桥的命令行工具。</li><li><code>virtinst</code> -一组用于创建虚拟机的命令行工具。</li><li><code>virt-manager</code> -易于使用的GUI界面和支持命令行工具，用于通过libvirt管理虚拟机。</li></ul><p>安装软件包后，libvirt守护程序将自动启动。您可以通过键入以下内容进行验证：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl is-active libvirtd</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出</span></span><br><span class="line">active</span><br></pre></td></tr></table></figure><p>为了能够创建和管理虚拟机，您需要将用户添加到“ libvirt”和“ kvm”组中。为此，请输入：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG libvirt <span class="variable">$USER</span></span><br><span class="line">sudo usermod -aG kvm <span class="variable">$USER</span></span><br></pre></td></tr></table></figure><p><code>$USER</code> 是一个环境变量，其中包含当前登录用户的名称。</p><p>注销并重新登录，以便刷新组成员身份。</p><h2 id="压缩qcow2镜像文件"><a href="#压缩qcow2镜像文件" class="headerlink" title="压缩qcow2镜像文件"></a>压缩qcow2镜像文件</h2><p>虚拟机需要关机，qcow2的存放位置：<code>/var/lib/libvirt/images/</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#复制镜像文件到其他目录</span></span><br><span class="line">sudo <span class="built_in">cp</span> /var/lib/libvirt/images/tes.qcow2 /data/test.qcow2</span><br><span class="line"></span><br><span class="line"><span class="comment">#导出压缩后的镜像文件</span></span><br><span class="line">sudo qemu-img convert -c -O qcow2 test.qcow2 new.qcow2</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> KVM,Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>卷积神经网络-CNN</title>
       <link href="/posts/37296/"/>
       <url>/posts/37296/</url>
