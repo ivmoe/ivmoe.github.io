@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>2.LUKS加密磁盘</title>
+      <link href="/posts/23942/"/>
+      <url>/posts/23942/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>软件包 cryptsetup</p></blockquote><h2 id="加密分区"><a href="#加密分区" class="headerlink" title="加密分区"></a>加密分区</h2><p>创建分区后，加密分区</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cryptsetup luksFormat [Device]/dev/sda2</span><br><span class="line"></span><br><span class="line">例：cryptsetup luksFormat /dev/sda2</span><br></pre></td></tr></table></figure><p>输入大写的“YES”，回车</p><p>输入两次密码，密码复杂度有要求</p><h2 id="打开加密分区"><a href="#打开加密分区" class="headerlink" title="打开加密分区"></a>打开加密分区</h2><p>输入命令，并创建加密分区的别名</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cryptsetup luksOpen [Device] [Name]</span><br><span class="line"></span><br><span class="line">[Name]是指加密后的分区名称，在/dev/mapper中体现</span><br><span class="line"></span><br><span class="line">例：cryptsetup luksOpen /dev/sda2 cr_data</span><br></pre></td></tr></table></figure><h2 id="挂载加密分区"><a href="#挂载加密分区" class="headerlink" title="挂载加密分区"></a>挂载加密分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/mapper/[Name]</span><br><span class="line"></span><br><span class="line">例：mkfs.ext4 /dev/mapper/cr_data</span><br><span class="line"></span><br><span class="line">mount /dev/mapper/cr_data /data</span><br></pre></td></tr></table></figure><h2 id="自动解密挂载"><a href="#自动解密挂载" class="headerlink" title="自动解密挂载"></a>自动解密挂载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加解密文件</span></span><br><span class="line">cryptsetup luksAddKey /dev/sda2 /root/cryptpasswd</span><br><span class="line"><span class="comment">#/root/cryptpasswd 文件中写入新的密码</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Minda00$&quot;</span> | cryptsetup luksAddKey /dev/sda2 /root/cryptpasswd</span><br><span class="line"></span><br><span class="line">vim /etc/crypttab</span><br><span class="line">写入内容：</span><br><span class="line">  cr_data  /dev/sda2  /root/cryptpasswd</span><br><span class="line">建议 /root/cryptpasswd 使用随机数</span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">spasswd=$(openssl rand -<span class="built_in">base64</span> 10)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$spasswd</span> &gt; /root/cryptpasswd</span><br><span class="line"></span><br><span class="line">vim /etc/fstab</span><br><span class="line">写入内容：</span><br><span class="line">cr_data  /data  ext4  defaults  0  0</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> LUKS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>愿你历尽千帆，归来仍少年</title>
       <link href="/posts/30155/"/>
       <url>/posts/30155/</url>
