@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ivmoe.github.io/MobaXtermKeygen/MobaXtermKeygen</loc>
-    
-    <lastmod>2022-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://ivmoe.github.io/posts/52509/</loc>
     
     <lastmod>2022-09-27</lastmod>
@@ -155,6 +146,13 @@
 
   
   <url>
+    <loc>https://ivmoe.github.io/tags/%E5%8A%B1%E5%BF%97/</loc>
+    <lastmod>2022-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ivmoe.github.io/tags/Linux/</loc>
     <lastmod>2022-10-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -170,13 +168,6 @@
   
   <url>
     <loc>https://ivmoe.github.io/tags/KVM/</loc>
-    <lastmod>2022-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ivmoe.github.io/tags/%E5%8A%B1%E5%BF%97/</loc>
     <lastmod>2022-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -199,14 +190,14 @@
 
   
   <url>
-    <loc>https://ivmoe.github.io/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://ivmoe.github.io/categories/%E6%96%87%E5%AD%A6/</loc>
     <lastmod>2022-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ivmoe.github.io/categories/%E6%96%87%E5%AD%A6/</loc>
+    <loc>https://ivmoe.github.io/categories/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
