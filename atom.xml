@@ -6,7 +6,7 @@
   <link href="https://ivmoe.github.io/atom.xml" rel="self"/>
   
   <link href="https://ivmoe.github.io/"/>
-  <updated>2023-02-19T01:32:19.298Z</updated>
+  <updated>2023-02-19T01:34:16.637Z</updated>
   <id>https://ivmoe.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Ubuntu安装mysql并远程访问.md</title>
+    <title>Ubuntu安装mysql并远程访问</title>
     <link href="https://ivmoe.github.io/posts/21274/"/>
     <id>https://ivmoe.github.io/posts/21274/</id>
     <published>2023-02-19T01:23:39.000Z</published>
-    <updated>2023-02-19T01:32:19.298Z</updated>
+    <updated>2023-02-19T01:34:16.637Z</updated>
     
     <content type="html"><![CDATA[<p>打开mysql社区网站：<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/">https://dev.mysql.com/downloads/</a></p><p>由于我使用的是ubuntu，所以下载的apt的包：<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/repo/apt/">https://dev.mysql.com/downloads/repo/apt/</a></p><p>上传至服务器，运行命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb</span><br></pre></td></tr></table></figure><p>按照提示选择好要安装的版本，这里就是MySQL8。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install mysql-server -y</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装好以后简单设置下，远程访问它</span></span><br><span class="line"></span><br><span class="line">mysql -uroot -p  <span class="comment">#登录mysql</span></span><br><span class="line"></span><br><span class="line">2.use mysql;  <span class="comment">#切换mysql数据库</span></span><br><span class="line"></span><br><span class="line">3.update user <span class="built_in">set</span> host = <span class="string">&#x27;%&#x27;</span> <span class="built_in">where</span> user = <span class="string">&#x27;root&#x27;</span>;  <span class="comment">#更新用户权限</span></span><br><span class="line"></span><br><span class="line">4.flush privileges;  <span class="comment">#刷新权限</span></span><br><span class="line"></span><br><span class="line">5.select user,host from user;  <span class="comment">#检查root是否对应%</span></span><br></pre></td></tr></table></figure>]]></content>
     
