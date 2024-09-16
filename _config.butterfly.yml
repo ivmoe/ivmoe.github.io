@@ -182,7 +182,7 @@ post_edit:
 
 # Related Articles
 related_post:
-  enable: true
+  enable: false
   limit: 6 # Number of posts displayed
   date_type: created # or created or updated 文章日期顯示創建日或者更新日
 
@@ -191,7 +191,7 @@ related_post:
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
 # false: disable pagination
-post_pagination: 1
+post_pagination: false
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
@@ -229,7 +229,7 @@ aside:
     description: Python工程师
     button:
       enable: true
-      icon: fab fa-envelope
+      icon: far fa-envelope
       text: E-mail Me
       link: mailto:im.kelvyn@outlook.com
   card_announcement:
