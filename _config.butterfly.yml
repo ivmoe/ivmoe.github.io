@@ -229,12 +229,12 @@ aside:
     description: Python工程师
     button:
       enable: true
-      icon: fab fa-github
+      icon: fab fa-envelope
       text: E-mail Me
       link: mailto:im.kelvyn@outlook.com
   card_announcement:
     enable: true
-    content: 本博客开启了基于<code>Waline</code>的评论，使用<code>vercel.app</code>，众所周知的原因，所以想要评论或者问题我，请发送邮件或者挂梯子！<br>推荐使用<a href="https://v.bujiasu.com/b/?code=BrmudbBX" target="_blank">不加速</a>
+    content: 本博客开启了基于<span style="color: red;">Waline</span>的评论，使用<span style="color: red;">vercel.app</span>，众所周知的原因，所以想要评论或者问题我，请发送邮件或者挂梯子！<br>推荐使用<a href="https://v.bujiasu.com/b/?code=BrmudbBX" target="_blank" style="color:red;"><strong>不加速.com</strong></a>!!!
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -946,7 +946,7 @@ CDN:
     # artalk_css:
     # artalk_js:
     # blueimp_md5:
-    busuanzi: https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.min.js
+    busuanzi: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.js
     # canvas_fluttering_ribbon:
     # canvas_nest:
     # canvas_ribbon:
