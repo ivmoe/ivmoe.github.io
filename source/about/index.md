@@ -4,7 +4,7 @@ date: 2022-08-13 11:46:24
 comments: false
 ---
 
-## 孟小N
+## 孟小N (Meng, Kelvyn)
 
 **Python工程师**
 
@@ -12,6 +12,11 @@ comments: false
 
 # 博客编年史
 
+{% timeline 2024年,red %}
+<!-- timeline 09月 -->
+一年半没更新了，现在无聊，又开始捡起来，更新随缘~~
+<!-- endtimeline -->
+{% endtimeline %}
 {% timeline 2022年,blue %}
 <!-- timeline 09月 -->
 `ivmoe.com`估计是被阿里的人注册了，标价2400+，算了，再也不搞域名玩了
