@@ -3,7 +3,7 @@ name: Pages
 on:
   push:
     branches:
-      - main
+      - gh-hexo
 jobs:
   build:
     runs-on: ubuntu-latest
