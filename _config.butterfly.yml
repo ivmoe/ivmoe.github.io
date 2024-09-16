@@ -374,6 +374,8 @@ local_search:
   # Unescape html strings to the readable one.
   unescape: false
   CDN:
+    option:
+        busuanzi: https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.min.js
 
 # Docsearch
 docsearch:
