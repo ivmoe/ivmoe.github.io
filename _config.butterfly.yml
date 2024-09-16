@@ -208,7 +208,7 @@ footer:
   owner:
     enable: true
     since: 2017
-  custom_text: 有些人，有些事，总会让人忘却所有烦恼
+  custom_text: <font color="red"><i class="fa-solid fa-heart"></i></font> 有些人，有些事，总会让人忘却所有烦恼 <font color="red"><i class="fa-solid fa-heart"></i></font><br><a href="/atom.xml" target="_blank">订阅本站</a> | <a href="/sitemap.xml" target="_blank">SiteMap</a>
   copyright: true # Copyright of theme and framework
 
 # aside (側邊欄)
