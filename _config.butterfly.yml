@@ -228,13 +228,13 @@ aside:
     enable: true
     description: Python工程师
     button:
-      enable: false
+      enable: true
       icon: fab fa-github
       text: E-mail Me
       link: mailto:im.kelvyn@outlook.com
   card_announcement:
-    enable: false
-    content: 记录工作和生活中的一些琐事，包含一些技术笔记和吐槽。
+    enable: true
+    content: 本博客开启了基于<code>Waline</code>的评论，使用<code>vercel.app</code>，众所周知的原因，所以想要评论或者问题我，请发送邮件或者挂梯子！<br>推荐使用<a href="https://v.bujiasu.com/b/?code=BrmudbBX" target="_blank">不加速</a>
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -672,11 +672,11 @@ activate_power_mode:
 # canvas_ribbon (靜止彩帶背景)
 # See: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
-  enable: false
+  enable: true
   size: 150
   alpha: 0.6
   zIndex: -1
-  click_to_change: false
+  click_to_change: true
   mobile: false
 
 # Fluttering Ribbon (動態彩帶)
