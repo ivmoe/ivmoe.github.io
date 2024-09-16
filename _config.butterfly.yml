@@ -455,14 +455,10 @@ valine:
 # waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
 waline:
-  serverURL: gateway01.ap-northeast-1.prod.aws.tidbcloud.com # Waline server address url
+  serverURL: https://waline-ivmoes-projects.vercel.app # Waline server address url
   bg: # waline background
   pageview: false
   option:
-    PORT: 4000
-    USERNAME: oux5mLn9oYhuENL.root
-    PASSWORD: SVT8TlO77HO9YvaM
-    DATABASE: waline
 
 # utterances
 # https://utteranc.es/
