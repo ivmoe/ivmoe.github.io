@@ -118,5 +118,5 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 # deploy:
 #   type: git
-#   repo: https://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@github.com:ivmoe/ivmoe.github.io.git,master
+#   repo: 
 #   branch: master
