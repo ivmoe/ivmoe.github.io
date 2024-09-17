@@ -739,7 +739,7 @@ font:
 # 左上角網站名字 主頁居中網站名字
 blog_title_font:
   font_link:
-  font-family: 愿世界和平
+  font-family:
 
 # The setting of divider icon (水平分隔線圖標設置)
 hr_icon:

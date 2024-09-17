@@ -1,39 +1,50 @@
 - class_name: 友情链接
-  class_desc: 那些人，那些事
+  class_desc: 今朝有酒今朝醉
+
   link_list:
+
     - name: Hexo
       link: https://hexo.io/zh-tw/
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 快速、简单且强大的网誌框架
+
     - name: ButterFly
       link: https://butterfly.js.org/
-      avatar: /img/favicon.png
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: A Simple and Card UI Design theme for Hexo
 
-- class_name: 推荐链接
-  class_desc: 开心的事物，总与美好相伴
+
+- class_name: 推荐站点
+  class_desc: Peace be with all the world! Free Palestine!
+  
   link_list:
-    - name: 清华大学开源软件镜像站
-      link: https://mirrors.tuna.tsinghua.edu.cn/
-      avatar: https://mirrors.tuna.tsinghua.edu.cn/static/img/logo-small.png
-      descr: 我常用的开源软件镜像站
+
+    - name: 南京大学开源软件镜像站
+      link: https://mirrors.nju.edu.cn/
+      avatar: https://mirrors.nju.edu.cn/assets/nju-c3c6250d.png
+      descr: 开源软件镜像站
+
     - name: docsmall
       link: https://docsmall.com/
       avatar: https://cdn.docsmall.com/assets/img/cbe37cd.png
       descr: 免费在线图片压缩、PDF压缩合并分割工具
+
     - name: Awesome Wallpaper
       link: https://wallhaven.cc/
       avatar: https://wallhaven.cc/favicon.ico
       descr: The best wallpaper on the Net!
+
     - name: 南山书院
       link: https://www.szyangxiao.com/
       avatar: https://www.szyangxiao.com/favicon.ico
       descr: 免费简洁的小说网站
+
     - name: Nginx Proxy Manager
       link: https://nginxproxymanager.com/
-      avatar: https://nginxproxymanager.com/logo.png
+      avatar: https://nginxproxymanager.com/logo.svg
       descr: Expose your services easily and securely
-    - name: 
+
+    - name: Pending
       link: 
       avatar: 
       descr: 
