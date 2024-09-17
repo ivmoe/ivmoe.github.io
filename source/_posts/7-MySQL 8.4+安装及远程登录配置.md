@@ -1,12 +1,13 @@
 ---
-title: MySQL8.4+安装及远程登录配置
+title: 基于Rocky9.4, MySQL8.4+安装及远程登录配置
 categories:
   - 笔记
 tags:
   - Linux
   - MySQL
+abbrlink: 11526
 date: 2024-9-16 20:53:14
-updated: 2024-9-16 20:53:14
+updated: 2024-9-17 15:13:23
 ---
 
 ## RockyLinux 9.4下安装
@@ -108,4 +109,4 @@ update user set host = '%' where user = 'root';
 flush privileges; 
 ```
 
-这次通过Navicatd的软件就可以直接连接了。
+**这次通过Navicat等软件就可以直接连接了。**
