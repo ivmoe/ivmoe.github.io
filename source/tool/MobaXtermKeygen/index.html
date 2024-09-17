@@ -145,7 +145,7 @@
         <br /><br />
         <a href="https://github.com/eligrey/FileSaver.js" target="_blank">FileSaver js生成文件下载</a>
         <p>
-        <div>直接从inused大佬那copy过来的，非常感谢大佬。原地址：<a hred="https://inused.github.io/pages/file/tool/MobaXtermKeygen.html">点我</a></div>
+        <div>直接从inused大佬那copy过来的，非常感谢大佬。原地址：<a href="https://inused.github.io/pages/file/tool/MobaXtermKeygen.html" target="_blank">点我</a></div>
     </div>
 
     <script type="module">
@@ -157,7 +157,7 @@ const VariantBase64ReverseDict = {};
 VariantBase64Table.forEach((val, i) => VariantBase64ReverseDict[val] = i);
 
 /** license 类型 */
-const LicenseType = {
+let LicenseType = {
     Professional: 1,
     Educational: 3,
     Persional: 4
@@ -307,17 +307,12 @@ function generateLicense(type, userName, count, majorVersion, minorVersion) {
     return VariantBase64Encode(EncryptBytes(0x787, licenseSourceStr.toBytes())).bytesToStr();
 }
 
-export { LicenseType, generateLicense }
-        
-        
-        //import { LicenseType, generateLicense } from './source/mobaXtermGenerater.js'
-
         var app = new Vue({
             el: '#app',
             data() {
                 return {
                     userName: 'defaultUser',
-                    versionName: '21.0',
+                    versionName: '24.2',
                     userNum: 1,
                     licenseType: 1,
                     LICENSE_TYPES: LicenseType
