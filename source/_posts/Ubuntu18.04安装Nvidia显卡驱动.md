@@ -4,6 +4,7 @@ categories: 笔记
 tags: Linux
 abbrlink: 65062
 date: 2020-11-20 15:44:00
+updated: 2020-11-20 15:44:00
 ---
 # 下载显卡驱动
 

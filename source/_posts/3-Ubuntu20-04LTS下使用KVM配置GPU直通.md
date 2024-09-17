@@ -7,6 +7,7 @@ tags:
   - KVM
 abbrlink: 7780
 date: 2022-09-18 00:57:11
+updated: 2022-09-18 00:57:11
 ---
 
 查看CPU是否支持硬件虚拟化`egrep -o '(vmx|svm)' /proc/cpuinfo`

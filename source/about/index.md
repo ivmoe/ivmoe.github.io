@@ -14,7 +14,7 @@ comments: false
 
 {% timeline 2024年,red %}
 <!-- timeline 09月 -->
-一年半没更新了，现在无聊，又开始捡起来，更新随缘~~
+一年半没更新了，想想不太对，还是一直更新吧，争取一个月两篇~~
 <!-- endtimeline -->
 {% endtimeline %}
 {% timeline 2022年,blue %}

@@ -4,6 +4,7 @@ tags: Linux
 abbrlink: 13583
 date: 2022-08-16 21:19:29
 categories: 笔记
+updated: 2022-08-16 21:19:29
 ---
 > 安装Linux系统，这里是CentOS7，操作全程在root下进行，关闭防火墙和SELinux。
 >

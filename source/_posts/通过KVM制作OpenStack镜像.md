@@ -7,6 +7,7 @@ tags:
     - OpenStack
 abbrlink: 19535
 date: 2022-08-21 14:08:35
+updated: 2022-08-21 14:08:35
 ---
 
 ## 在Ubuntu20.04上安装KVM

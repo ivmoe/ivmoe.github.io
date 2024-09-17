@@ -6,6 +6,7 @@ tags:
   - Linux
 abbrlink: 3875
 date: 2022-08-25 22:12:04
+updated: 2022-08-25 22:12:04
 ---
 
 # 自动化安装Ubuntu20.04
