@@ -116,7 +116,7 @@
                             <div class="pure-control-group pure-u-1">
                                 <label for="userName">用户名：</label>
                                 <my-input :idattr="'userName'" :validation="'^[a-zA-Z]+$'" :valueattr="userName"
-                                    :validationtips="'Only use letter!'" :placeholderattr="'示例 defaultUser'" @set-data="setUserName">
+                                    :validationtips="'只能使用字母'" :placeholderattr="'示例 defaultUser'" @set-data="setUserName">
                                 </my-input>
                             </div>
                             <div class="pure-control-group pure-u-1">
@@ -141,12 +141,19 @@
             </div>
         </div>
     </div>
+
     <div class="quote">
-        <a href="https://github.com/flygon2018/MobaXterm-keygen" target="_blank">MobaXterm-keygen 核心算法</a>
+       <!--  <a href="https://github.com/flygon2018/MobaXterm-keygen" target="_blank">MobaXterm-keygen 核心算法</a>
         <br /><br />
         <a href="https://github.com/Stuk/jszip" target="_blank">jszip js实现的zip文件库</a>
         <br /><br />
         <a href="https://github.com/eligrey/FileSaver.js" target="_blank">FileSaver js生成文件下载</a>
+        <p> -->
+        <div style="color:red;">
+            <li>用户名：只能使用字母</li>
+            <li>版本号：小数点后只能有1位</li>
+            <li>用户数：数字且最小值为1</li>
+        </div>
         <p>
         <div>直接从inused大佬那copy过来的，非常感谢大佬。原地址：<a href="https://inused.github.io/pages/file/tool/MobaXtermKeygen.html" target="_blank">点我</a></div>
     </div>
