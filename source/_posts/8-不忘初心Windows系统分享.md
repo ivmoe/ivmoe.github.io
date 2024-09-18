@@ -1,18 +1,20 @@
 ---
-title: 【不忘初心系统】网盘分享分享，没有套路
+title: 【不忘初心系统】Windows11系统裁剪，网盘分享
 categories:
   - 分享
 tags:
   - 不忘初心
   - Windows11
-abbrlink: 
+abbrlink: 13412
 date: 2024-9-18 21:23:38
-updated: 2024-9-18 21:23:45
+updated: 2024-9-18 21:58:52
 sticky: 100
 ---
 
-{% note warning modern %}
-我分享的以不忘初心游戏版为主，其他的可能也会更新。**所有资源均来自于互联网。**
+{% note danger no-icon %}
+我分享的以不忘初心游戏版为主，美化版可能也会更新。
+
+**所有资源均来自于互联网，未经验证，请自己评估后再使用。**
 
 不忘初心裁剪的Windows系统是{% label 没有激活的 red %}，请自行解决激活问题！
 {% endnote %}
