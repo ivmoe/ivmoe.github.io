@@ -8,6 +8,10 @@ comments: false
 
 **Python工程师**
 
+{% note info modern %}
+如果不认同我的观点，请离开本站，谢谢~
+{% endnote %}
+
 **联系方式：** im.kelvyn#outlook.com（#换成@）
 
 # 博客编年史

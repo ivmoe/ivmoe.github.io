@@ -19,6 +19,11 @@
   
   link_list:
 
+    - name: 唱《童话镇》的那个女人
+      link: https://www.chatcyf.com/
+      avatar: https://img.picui.cn/free/2024/09/18/66ead294ee77a.png
+      descr: 永远的Chenyifaer
+
     - name: 南京大学开源软件镜像站
       link: https://mirrors.nju.edu.cn/
       avatar: https://mirrors.nju.edu.cn/assets/nju-c3c6250d.png
