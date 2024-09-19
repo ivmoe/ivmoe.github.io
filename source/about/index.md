@@ -6,13 +6,14 @@ comments: false
 
 ## 孟小N (Meng, Kelvyn)
 
-**Python工程师**
-
-{% note info modern %}
-如果不认同我的观点，请离开本站，谢谢~
-{% endnote %}
+{% label Python工程师 purple %} {% label Plus版 pink %}
 
 **联系方式：** im.kelvyn#outlook.com（#换成@）
+
+{% note info modern %}
+如您不认同我的观点，请自行离开，谢谢~
+{% endnote %}
+
 
 # 博客编年史
 

@@ -36,7 +36,7 @@ Windows 11 23H2最令人期待的功能之一便是任务栏“从不合并”�
 {% btn 'https://www.123pan.com/s/nWWPTd-cUYOd?',123网盘,far fa-hand-point-right,green larger %} 提取码：{% hideInline mLus,点击查看,#00BFFF,#fff %}
 <!-- endtab -->
 
-<!-- tab pending -->
+<!-- tab 忘初心·美化版 -->
 Peding...
 <!-- endtab -->
 
