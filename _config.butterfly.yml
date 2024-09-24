@@ -645,7 +645,7 @@ text_align_justify: false
 background:
 
 # Footer Background
-footer_bg: "#4A4A4A"
+footer_bg: "#6022A6"   # "#4A4A4A"
 
 # Add mask to header or footer (为 header 或 footer 添加黑色半透遮罩)
 mask:
@@ -789,11 +789,11 @@ wordcount:
 
 # medium-zoom
 # https://github.com/francoischalifour/medium-zoom
-medium_zoom: true
+medium_zoom: false
 
 # fancybox
 # https://fancyapps.com/fancybox/
-fancybox: false
+fancybox: true
 
 # Tag Plugins settings (標籤外掛)
 # --------------------------------------
@@ -946,7 +946,7 @@ CDN:
     # artalk_css:
     # artalk_js:
     # blueimp_md5:
-    busuanzi: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.js
+    # busuanzi:
     # canvas_fluttering_ribbon:
     # canvas_nest:
     # canvas_ribbon:
