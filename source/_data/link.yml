@@ -4,12 +4,12 @@
   link_list:
 
     - name: Hexo
-      link: https://hexo.io/zh-tw/
+      link: https://hexo.io/zh-tw
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 快速、简单且强大的网誌框架
 
     - name: ButterFly
-      link: https://butterfly.js.org/
+      link: https://butterfly.js.org
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: A Simple and Card UI Design theme for Hexo
 
@@ -20,32 +20,37 @@
   link_list:
 
     - name: 唱《童话镇》的那个女人
-      link: https://www.chatcyf.com/
+      link: https://www.chatcyf.com
       avatar: https://img.picui.cn/free/2024/09/18/66ead294ee77a.png
       descr: Chenyifaer
 
     - name: 南京大学开源软件镜像站
-      link: https://mirrors.nju.edu.cn/
+      link: https://mirrors.nju.edu.cn
       avatar: https://mirrors.nju.edu.cn/assets/nju-c3c6250d.png
       descr: 开源软件镜像站
 
     - name: docsmall
-      link: https://docsmall.com/
+      link: https://docsmall.com
       avatar: https://cdn.docsmall.com/assets/img/cbe37cd.png
       descr: 免费在线图片压缩、PDF压缩合并分割工具
 
     - name: Awesome Wallpaper
-      link: https://wallhaven.cc/
+      link: https://wallhaven.cc
       avatar: https://wallhaven.cc/favicon.ico
       descr: 其实是被屏蔽的那个 Wallhaven
 
     - name: 南山书院
-      link: https://www.szyangxiao.com/
+      link: https://www.szyangxiao.com
       avatar: https://www.szyangxiao.com/favicon.ico
       descr: 免费简洁的小说网站
 
+    - name: Nginx UI
+      link: https://nginxui.com/zh_CN
+      avatar: https://nginxui.com/assets/icon.svg
+      descr: Nginx 网络管理界面的新选择
+
     - name: Nginx Proxy Manager
-      link: https://nginxproxymanager.com/
+      link: https://nginxproxymanager.com
       avatar: https://nginxproxymanager.com/logo.svg
       descr: Expose your services easily and securely
 
