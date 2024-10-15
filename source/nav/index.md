@@ -1,12 +1,13 @@
 ---
 title: 导航
 comments: false
+aside: false
 date: 2024-10-15 21:03:09
 ---
 
 {% flink %}
 
-- class_name: 导航
+- class_name: 开发
   class_desc: 推荐网站，总有一款适合你~
   link_list:
 
