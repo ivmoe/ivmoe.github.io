@@ -2,7 +2,6 @@
 title: 导航
 comments: false
 date: 2024-10-15 21:03:09
-type: "link"
 ---
 
 {% flink %}
