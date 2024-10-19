@@ -11,8 +11,10 @@ updated: 2024-9-18 21:58:52
 sticky: 100
 ---
 
+> This message is used to verify that this feed (feedId:70345839630414848) belongs to me (userId:67116457259628544). Join me in enjoying the next generation information browser https://follow.is.
+
 {% note danger no-icon %}
-我分享的以不忘初心游戏版为主，美化版可能也会更新。
+我分享的以不忘初心游戏版为主，美化版可能也会更新。之前用的123网盘，后来这货飘了，竟然限制每天下载文件大小1GB，让他自己玩去吧。这么看下来夸克的88VIP还是能用的~
 
 **所有资源均来自于互联网，未经验证，请自己评估后再使用。**
 
@@ -33,15 +35,15 @@ Windows 11 23H2最令人期待的功能之一便是任务栏“从不合并”�
 
 **下载地址：**
 
-{% btn 'https://www.123pan.com/s/nWWPTd-cUYOd?',123网盘,far fa-hand-point-right,green larger %} 提取码：{% hideInline mLus,点击查看,#00BFFF,#fff %}
+{% btn 'https://pan.quark.cn/s/5e2c6ed8ab34',夸克网盘,far fa-hand-point-right,green larger %} 提取码：{% hideInline hcvs,点击查看,#00BFFF,#fff %}
 <!-- endtab -->
 
 <!-- tab 忘初心·美化版 -->
-Peding...
+不分组了，不忘初心的精简系统都放在一起了，请直接看游戏版tab。
 <!-- endtab -->
 
-<!-- tab pending -->
-Peding...
+<!-- tab 啥也没有 -->
+如你所见~~
 <!-- endtab -->
 {% endtabs %}
 
