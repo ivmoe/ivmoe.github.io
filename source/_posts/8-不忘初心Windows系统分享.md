@@ -8,7 +8,7 @@ tags:
 abbrlink: 13412
 date: 2024-9-18 21:23:38
 updated: 2024-9-18 21:58:52
-sticky: 100
+sticky: 90
 ---
 
 > This message is used to verify that this feed (feedId:70345839630414848) belongs to me (userId:67116457259628544). Join me in enjoying the next generation information browser https://follow.is.
