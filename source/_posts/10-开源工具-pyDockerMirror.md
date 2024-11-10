@@ -43,11 +43,6 @@ systemctl restart docker.service
 
 ## 编译
 
-* 二进制文件下载地址
-
-```bash
-wget https://github.com/ivmoe/pyDockerMirror/releases/download/v1.0.0/pyDockerMirror.tar.gz
-```
 
 * 源码编译
 
@@ -67,6 +62,14 @@ pyinstaller -F pydm.py
 
 ## 使用说明
 
+* 下载二进制文件并解压
+
+```bash
+wget https://github.com/ivmoe/pyDockerMirror/releases/download/v1.0.0/pyDockerMirror.tar.gz
+
+tar zxvf pyDockerMirror.tar.gz
+```
+
 * 添加执行权限，并拷贝至`/usr/local/bin`目录下
 
 ```bash
@@ -83,11 +86,11 @@ pydm help
 
 **privateRegistry 域名:** 填写私有仓库域名，可以是harbor或者阿里云镜像仓库
 
+**privateRegistry 项目：** 填写项目（仓库）名称，默认为public
+
 **privateRegistry 用户名：** 填写账号，具有pull和push权限
 
 **privateRegistry 密码：** 填写密码
-
-**privateRegistry 项目：** 填写项目（仓库）名称，默认为public
 
 **示例：**
 
@@ -98,11 +101,11 @@ pydm help
 ```bash
 pydm pull <镜像名称>
 ```
-![](./static/pull.png)
+![](https://img.picui.cn/free/2024/11/10/6730c114e915e.png)
 
 project没有写对的话，报错如下：
 
-![](./static/push-error.png)
+![](https://img.picui.cn/free/2024/11/10/6730c114ed39f.png)
 
 * 镜像拉取至本地
 
@@ -112,7 +115,7 @@ project没有写对的话，报错如下：
 pydm pull-local <镜像名称>
 ```
 
-![](./static/pull-local.png)
+![](https://img.picui.cn/free/2024/11/10/6730c114e93c9.png)
 
 * 配置管理
 
