@@ -6,7 +6,7 @@ tags:
   - docker
 abbrlink: 13078
 date: 2024-11-05 18:35:26
-updated: 2024-11-05 18:35:26
+updated: 2024-11-12 15:35:10
 sticky: 
 ---
 
@@ -95,8 +95,8 @@ You can use my config, the file is `/etc/docker/daemon.json`:
     dbfilename dump.rdb
     # Redis 备份文件存储目录，注意：该路径是 docker 容器内的路径
     dir /data
-    # 是否开启 aof 增量备份功能，默认是否，就是修改一次保存一次，不建议开启，有下边的一秒保存一次就够了
-    appendonly no
+    # 是否开启 aof 增量备份功能。会有一定的性能损耗，如果Redis作为cache类应用，不建议开启。
+    appendonly yes
     # AOF文件的名称，这里使用默认值
     appendfilename appendonly.aof
     # aof 增量备份的策略，这里是每秒钟一次，将累积的写命令持久化到硬盘中
