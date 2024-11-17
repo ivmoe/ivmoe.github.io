@@ -5,6 +5,11 @@ aside: false
 date: 2024-10-15 21:03:09
 ---
 
+{% note blue 'fas fa-bullhorn' modern %}
+在这里我会分几大类，将我认为我需要的网站写在这里，如果对你有所帮助，那将会是我的荣幸！
+{% endnote %}
+
+
 {% flink %}
 
 - class_name: IT技术
@@ -27,7 +32,7 @@ date: 2024-10-15 21:03:09
       descr: 逐步学习正则表达式，从零基础到高阶。
 
 {% endflink %}
-
+---
 {% flink %}
 
 - class_name: 电脑
@@ -40,7 +45,7 @@ date: 2024-10-15 21:03:09
       descr: 只根据硬件ID下载驱动，不要用它的那个hta安装，夹带私货
 
 {% endflink %}
-
+---
 {% flink %}
 
 - class_name: 甜菜
