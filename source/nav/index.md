@@ -26,6 +26,7 @@ date: 2024-10-15 21:03:09
       avatar: https://regexlearn.com/Done.webp
       descr: 逐步学习正则表达式，从零基础到高阶。
 
+---
 
 - class_name: 电脑
   class_desc: 关于电脑的一些网站
@@ -36,6 +37,7 @@ date: 2024-10-15 21:03:09
       avatar: https://cdn.lo4d.com/t/icon/128/driverpack-solution.png
       descr: 只根据硬件ID下载驱动，不要用它的那个hta安装，夹带私货
 
+---
 
 - class_name: 甜菜
   class_desc: 都是甜菜~
