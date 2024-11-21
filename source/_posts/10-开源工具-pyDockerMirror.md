@@ -6,11 +6,11 @@ tags:
   - docker
 abbrlink: 54242
 date: 2024-11-10 22:44:38
-updated: 2024-11-10 22:44:42
+updated: 2024-11-21 14:34:31
 sticky: 100
 ---
 
-# pyDockerMirror 容器镜像转存工具
+## pyDockerMirror 容器镜像转存工具
 
 Github地址： https://github.com/ivmoe/pyDockerMirror
 
@@ -19,9 +19,17 @@ Github地址： https://github.com/ivmoe/pyDockerMirror
 理论上凡是支持Docker登录、pull、push的私有仓库均适用。
 
 ## TODO
-- [ ] 批量镜像拉取及推送
+- [x] 批量镜像拉取及推送
 
 *PS: 其实我认为目前功能已经够用了，上边功能哪天闲下来再加吧。*
+
+## 更新日志
+2024-11-21 新增批量拉取镜像功能，新增线程池，加快多镜像拉取速度。
+           如果没有必要，可能不会再更新了。
+           写到这里，我觉得这个项目已经基本满足我的需求了，如果有什么问题，欢迎提issue。
+           
+
+## 镜像加速器配置
 
 针对目前DockerHub官方被Ban的情况下，可以通过配置`/etc/docker/daemon.json`配置镜像加速器。
 
@@ -42,7 +50,6 @@ systemctl restart docker.service
 ```
 
 ## 编译
-
 
 * 源码编译
 
@@ -66,8 +73,7 @@ pyinstaller -F pydm.py
 
 ```bash
 wget https://github.com/ivmoe/pyDockerMirror/releases/download/v1.0.0/pyDockerMirror.tar.gz
-
-tar zxvf pyDockerMirror.tar.gz
+tar -zxvf pyDockerMirror.tar.gz
 ```
 
 * 添加执行权限，并拷贝至`/usr/local/bin`目录下
@@ -86,11 +92,11 @@ pydm help
 
 **privateRegistry 域名:** 填写私有仓库域名，可以是harbor或者阿里云镜像仓库
 
-**privateRegistry 项目：** 填写项目（仓库）名称，默认为public
-
 **privateRegistry 用户名：** 填写账号，具有pull和push权限
 
 **privateRegistry 密码：** 填写密码
+
+**privateRegistry 项目：** 填写项目（仓库）名称，默认为public
 
 **示例：**
 
@@ -100,6 +106,8 @@ pydm help
 
 ```bash
 pydm pull <镜像名称>
+# 或者
+pydm pull <文件名>
 ```
 ![](https://img.picui.cn/free/2024/11/10/6730c114e915e.png)
 
@@ -113,9 +121,28 @@ project没有写对的话，报错如下：
 
 ```bash
 pydm pull-local <镜像名称>
+# 或者
+pydm pull-local <文件名>
 ```
 
 ![](https://img.picui.cn/free/2024/11/10/6730c114e93c9.png)
+
+例如：
+```bash
+# 拉取单个镜像
+pydm pull nginx:latest
+pydm pull-local nginx:latest
+
+# 拉取多个镜像
+cat > images.txt << EOF
+swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/library/python:3-alpine
+stilleshan/anylink:0.9.4
+node:lts-alpine
+EOF
+
+pydm pull images.txt
+pydm pull-local images.txt
+```
 
 * 配置管理
 
