@@ -4,7 +4,7 @@ tags: Linux
 abbrlink: 13583
 date: 2022-08-16 21:19:29
 categories: 笔记
-updated: 2024-11-20 20:03:47
+updated: 2024-11-24 22:10:06
 ---
 > 安装Linux系统，这里是CentOS7，操作全程在root下进行，关闭防火墙和SELinux。
 >
@@ -106,6 +106,9 @@ $ nfsstat -c
 ## 客户端挂载nfs
 
 ```shell
+# 需要安装nfs客户端
+yum install -y nfs-utils
+
 # 挂载NFS服务器中的NFS文件夹到客户机上的/data目录，需要永久修改的话修改/etc/fstab
 mount -t nfs  <nfs_server_ip>:/nfs /data
 ```

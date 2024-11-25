@@ -4,9 +4,9 @@ categories:
   - 笔记
 tags:
   - Ansible
-abbrlink: 
+abbrlink: 2817
 date: 2024-11-22 21:52:36
-updated: 
+updated: 2024-11-24 22:37:52
 sticky: 
 ---
 
@@ -32,7 +32,7 @@ sticky:
 ## 3.如何学习ansible
 
 ```
-0.每天第一件事,打开ansible官方文档,记得带个呕吐袋,不要吐到其他同学身上
+0.多利用ansible官方文档
 1.你所需要的命令都有专门的模块
 2.模块使用的语法是官方定义的
 3.尽量少用shell模块.当需要用shell模块的时候,停下来思考一下,是不是有专门的模块可以使用
@@ -273,7 +273,6 @@ ansible backup -m copy -a "src=/root/oldya/ dest=/opt/"
 命令解释：
 
 ```
-请-滚去看官网
 https://docs.ansible.com/ansible/latest/modules/file_module.html#file-module
 ```
 创建一个文件:
