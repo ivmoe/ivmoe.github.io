@@ -17,8 +17,11 @@ comments: false
 # 博客编年史
 
 {% timeline 2024年,red %}
+<!-- timeline 11月 -->
+11-27 开始学习小鹤双拼
+<!-- endtimeline -->
 <!-- timeline 09月 -->
-一年半没更新了，想想不太对，还是一直更新吧，争取一个月两篇~~
+一年半没更新了，想想不太对，还是先更新着吧~~
 <!-- endtimeline -->
 {% endtimeline %}
 {% timeline 2022年,blue %}

@@ -4,7 +4,7 @@ categories:
   - 笔记
 tags:
   - Ansible
-abbrlink: 
+abbrlink: 11623
 date: 2024-11-25 14:10:49
 updated: 
 sticky: 
@@ -37,7 +37,7 @@ roles/
             main.yml      #  <-- variables associated with this role
 ```
 
-以上，是咱们再工作学习过程中较为通用并且使用频率最高的，官网介绍的其他目录可以通过官网等渠道自行学习，目的是一样的！
+以上，是在工作学习过程中较为通用并且使用频率最高的，官网介绍的其他目录可以通过官网等渠道自行学习！
 
 # 示例
 
