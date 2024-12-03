@@ -11,8 +11,6 @@ updated: 2024-9-18 21:58:52
 sticky: 90
 ---
 
-> This message is used to verify that this feed (feedId:70345839630414848) belongs to me (userId:67116457259628544). Join me in enjoying the next generation information browser https://follow.is.
-
 {% note danger no-icon %}
 我分享的以不忘初心游戏版为主，美化版可能也会更新。之前用的123网盘，后来这货飘了，竟然限制每天下载文件大小1GB，让他自己玩去吧。这么看下来夸克的88VIP还是能用的~
 
