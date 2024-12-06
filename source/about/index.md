@@ -14,7 +14,7 @@ comments: false
 {% endnote %}
 
 
-# 博客编年史
+# Blog编年史
 
 {% timeline 2024年,red %}
 <!-- timeline 11月 -->
@@ -56,7 +56,7 @@ comments: false
 注册了几个域名，又是因为特么的心血来潮。`92ni.vip`、`junzhifou.com`、`ivmoe.com`，徐凤年那个域名卖出去了
 <!-- endtimeline -->
 <!-- timeline 04月 -->
-没事逛博客，看到一个合适的香港空间（咦~怎么又是空间），就又开始搭建博客了，又再一次入坑，这次用的Typecho和handsome主题
+没事逛Blog，看到一个合适的香港空间（咦~怎么又是空间），就又开始搭建Blog了，又再一次入坑，这次用的Typecho和handsome主题
 <!-- endtimeline -->
 {% endtimeline %}
 {% timeline 2017年,red %}
@@ -66,18 +66,18 @@ comments: false
 {% endtimeline %}
 {% timeline 2016年,pink %}
 <!-- timeline 05月 -->
-虚拟空间到期，博客运行一年关掉(;´༎ຶД༎ຶ\`)
+虚拟空间到期，Blog运行一年关掉(;´༎ຶД༎ຶ\`)
 <!-- endtimeline -->
 {% endtimeline %}
 {% timeline 2015年,green %}
 <!-- timeline 08月 -->
-博客搭建成功，用的`WordPress`，犹记得当时用的主题是破解版的XIU
+Blog搭建成功，用的`WordPress`，犹记得当时用的主题是破解版的XIU
 <!-- endtimeline -->
 <!-- timeline 07月 -->
 域名备案成功，从此踏上了一条不归路
 <!-- endtimeline -->
 <!-- timeline 05月 -->
-心血来潮，买到`dearna.com.cn`域名，打算建个博客，写一写笔记，记录一下和她的爱情故事
+心血来潮，买到`dearna.com.cn`域名，打算建个Blog，写一写笔记，记录一下和她的爱情故事
 <!-- endtimeline -->
 <!-- timeline 05月 -->
 在阿里云搞到了一台免费一年的虚拟空间

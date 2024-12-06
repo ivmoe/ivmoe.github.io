@@ -24,7 +24,6 @@ sticky:
 
 （所以说嘛，基础很重要，如果不记得主机清单[https://blog.csdn.net/qq_41765918/article/details/121676991](https://blog.csdn.net/qq_41765918/article/details/121676991)和配置文件[https://blog.csdn.net/qq_41765918/article/details/121706648](https://blog.csdn.net/qq_41765918/article/details/121706648)是如何运用的，快快去学习。）
 
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/3b7b8fe21006be0d231e701c4c17388e.png)
 
 ```yaml
 [student@servera ~]$ cat hosts 
@@ -60,7 +59,7 @@ servera                    : ok=2    changed=1    unreachable=0    failed=0
 
 ### 📜3. Playbook工作流程
 
-![](https://i-blog.csdnimg.cn/blog_migrate/fa2401007dfe0c6653523503074cc279.png)
+![](https://img.picui.cn/free/2024/12/06/67525a5dac6a1.png)
 
 +   playbook 剧本是由一个或多个"play"组成的列表
 +   play的主要功能在于将预定义的一组主机，装扮成事先通过ansible中的task定义好的角色。Task  
@@ -69,8 +68,6 @@ servera                    : ok=2    changed=1    unreachable=0    failed=0
 +   Playbook 文件是采用YAML语言编写的
 
 （就正如图片小人书，剧本都是由我们根据特定需求编写好的“脚本”，此“脚本”运用各种模块通过作用于特定的主机清单而达到需求。）
-
-![image-20211205170916711](https://i-blog.csdnimg.cn/blog_migrate/c77563b1a955b7be46fa05a967cfb826.png)
 
 * * *
 
@@ -108,8 +105,6 @@ servera                    : ok=2    changed=1    unreachable=0    failed=0
 很多刚学习的同学，往往运行报错就挂在语法上，后续可通过不断的练习来理解。
 
 （语法基础真的很重要，别说了你又不听，听了你又不懂，懂了你又不做，做了你又做错，错了你又不认，认了你又不改，改了你又不服。）
-
-![image-20211205171204735](https://i-blog.csdnimg.cn/blog_migrate/a8b2db17d6763604352a30076c82faaa.png)
 
 * * *
 
@@ -209,7 +204,6 @@ set et    # expandtab，将tab转成空格，缩进用空格来表示
 ```
 
 （别问我为什么要改写，因为当你见到别人噼里啪啦地敲完键盘写好playbook时，你可能还在默念按了多少个空格。>.<）
-![](https://i-blog.csdnimg.cn/blog_migrate/8a46427eae9e18b6877ab760bd957d56.png)
 
 * * *
 
@@ -232,8 +226,6 @@ set et    # expandtab，将tab转成空格，缩进用空格来表示
 ```
 
 基本都是使用新的写法，便于阅读和排错。
-
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/387481714c72c5914c61a7f3472e4713.png)
 
 * * *
 
@@ -396,8 +388,7 @@ This is a test page.
      msg: "Test"
 ```
 
-当然，不在剧本上编写，在配置文件上编写也可以，如果两个地方都进行编写，在剧本中的优先级会比配置文件上的高，例如：配置文件上启动提权become: yes，但剧本上配置了become: no，最终生效为剧本上的配置。  
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/4a6e279fcb1b9662c098d3cd667b6cb4.png)
+当然，不在剧本上编写，在配置文件上编写也可以，如果两个地方都进行编写，在剧本中的优先级会比配置文件上的高，例如：配置文件上启动提权become: yes，但剧本上配置了become: no，最终生效为剧本上的配置。 
 
 * * *
 
@@ -408,8 +399,6 @@ This is a test page.
 **ansible-doc modulename 查看模块帮助文件**
 
 （上一篇文章总结处[https://blog.csdn.net/qq_41765918/article/details/121722471](https://blog.csdn.net/qq_41765918/article/details/121722471)提及，查看帮助真的很重要~~）
-
-![image-20211204212605255](https://i-blog.csdnimg.cn/blog_migrate/003a55e78db200e79553b22e2bce90f5.png)
 
 * * *
 
