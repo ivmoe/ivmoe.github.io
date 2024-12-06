@@ -172,7 +172,7 @@ EOF
 
 
 systemctl daemon-reload
-systemctl enabled buildkit --now
+systemctl enable buildkit --now
 ```
 
 ## 第二种方法（推荐）
@@ -184,7 +184,7 @@ wget https://github.com/containerd/nerdctl/releases/download/v1.7.7/nerdctl-full
 tar Cxzvvf /usr/local nerdctl-full-1.7.7-linux-amd64.tar.gz
 
 systemctl daemon-reload
-systemctl enabled buildkit --now
+systemctl enable buildkit --now
 ```
 
 如果在root模式使用：
