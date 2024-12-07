@@ -7,7 +7,7 @@ tags:
   - Containerd
 abbrlink: 100016
 date: 2024-12-6 20:43:17
-updated: 
+updated: 2024-12-7 16:10:10
 sticky: 
 ---
 
@@ -17,20 +17,25 @@ sticky:
 
 当时Docker的容器化技术崛起，在这条赛道上无敌，Google在容器编排上搞出了Kubernetes，Docker自己搞出了Swarm，但是k8s一家独大。Docker把自己的Containerd捐给了CNCF(Cloud Native Computing Fundation)。
 
-Kubernetes为了表示中立性，搞一个标准化的容器运行时接口CRI(Container Runntime Interface)，Containerd是第一个支持的。经过这几年这么多版本的迭代，Containerd越来越健壮，它的口号是simplicity, robustness and portability（简单、健壮、可移植）。
+Kubernetes为了表示中立性，搞了一个标准化的容器运行时接口CRI(Container Runntime Interface)，Containerd是第一个支持的。经过这几年这么多版本的迭代，Containerd越来越健壮，它的口号是simplicity, robustness and portability（简单、健壮、可移植）。
 
-总而言之，docker被自己和其他大佬基本给玩死了。现在Containerd是完全可以替代docker这项技术的，而且在k8s中可以原生支持，所以我们没有不学习的理由，况且，这玩意的用法有了nerdctl后，跟docker的用法基本一模一样。
+总而言之，docker被自己和其他大佬基本给玩死了。Containerd虽然也是docker的底层，但也可以不需要docker，这玩意的用法有了nerdctl后，cli跟docker的用法基本一模一样。
 
 # 安装Containerd
 
 首先，我们应该知道官网：[https://containerd.io/](https://containerd.io/)
 
 我们会用到的几个软件的项目地址：
-- Containerd: [https://github.com/containerd/containerd](https://github.com/containerd/containerd)
-- runc: [https://github.com/containerd/containerd](https://github.com/containerd/containerd)
-- CNI plugins: [https://github.com/containernetworking/plugins](https://github.com/containernetworking/plugins)
-- nerdctl: [https://github.com/containerd/nerdctl](https://github.com/containerd/nerdctl)
-- buildkit: [https://github.com/moby/buildkit](https://github.com/moby/buildkit)
+
+- **Containerd**: [https://github.com/containerd/containerd](https://github.com/containerd/containerd)
+
+- **runc**: [https://github.com/containerd/containerd](https://github.com/containerd/containerd)
+
+- **CNI plugins**: [https://github.com/containernetworking/plugins](https://github.com/containernetworking/plugins)
+
+- **nerdctl**: [https://github.com/containerd/nerdctl](https://github.com/containerd/nerdctl)
+
+- **buildkit**: [https://github.com/moby/buildkit](https://github.com/moby/buildkit)
   - 这个东西因为`nerdctl build`依赖它，主要是用于从dockerfile来build image的，建议安装
 
 ## 第一种方法
@@ -96,6 +101,8 @@ systemctl enable containerd --now
 
 - 安装runc
 
+> 要理解runc，我们需要了解容器标准OCI（Open Container Initiative）可以理解为容器运行标准，是由多个组织共同成立，主要是维护runc的标准协议和相关的开发工作。所谓的runc主要是负责容器生命周期的管理，以及对容器状态的描述。runc的实现标准主要是根据OCI相关的规范来实现容器生命周期的管理，也是所有容器运行的基础功能。runc容器可以说实现了cgroup/linux kernel相关的隔离抽象接口。自从docker项目改为moby以后，docker按OCI标准抽出runc的项目，docker根据containerd直接调用了runc的api。总结，runc抽象出来的一个容器运行标准的api，主要是容器生命周期管理的一个项目，实现了容器启停、资源隔离等功能。
+
 ```bash
 wget https://github.com/opencontainers/runc/releases/download/v1.2.2/runc.amd64
 
@@ -103,6 +110,14 @@ install -m 755 runc.amd64 /usr/local/sbin/runc
 ```
 
 - 安装CNI plugins
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/cni-plugins-20240717.png)
+
+> CNI（Container Network Interface）插件是独立的可执行文件，遵循 CNI 规范。Kubernetes 通过 kubelet 调用这些插件来创建和管理容器的网络接口。CNI 插件的主要职责包括网络接口的创建和删除、IP 地址的分配和回收、以及相关网络资源的配置和清理。
+
+![](https://pek3b.qingstor.com/kubesphere-community/images/3e21950f-e076-42b4-8f3b-8605e79aee3b.jpg)
+
+详细了解可以参考：[https://www.kubesphere.io/zh/blogs/containerd-cni/](https://www.kubesphere.io/zh/blogs/containerd-cni/)
 
 ```bash
 wget https://github.com/containernetworking/plugins/releases/download/v1.6.1/cni-plugins-linux-amd64-v1.6.1.tgz
@@ -116,11 +131,10 @@ tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.6.1.tgz
 | ctr     | containerd            | Native | For debugging only | (None, see ctr --help to learn the usage)                               |
 | nerdctl | containerd (non-core) | Native | General-purpose    | https://github.com/containerd/nerdctl                                   |
 | crictl  | Kubernetes SIG-node   | CRI    | For debugging only | https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/crictl.md |
-|         |                       |        |                    |                                                                         |
 
 这里我推荐使用更加友好的`nerdctl`。
 
-> ps: nerdctl `2.0.0及2.0.2`版本对于`docker.io`的域名解析有问题，导致无法使用镜像加速，对国内用户来说影响太大，所以不推荐使用这两个版本。官方回复，他们将在`2.0.2`版本解决这个问题。
+> ps: nerdctl `2.0.0及2.0.1`版本对于`docker.io`的域名解析有问题，导致无法使用镜像加速，对国内用户来说影响较大，所以不推荐使用这两个版本。官方回复，他们将在`2.0.2`版本解决这个问题。
 
 nerdctl命令自动补全
 
@@ -134,7 +148,7 @@ nerdctl version
 
 - 还需要安装`buildkit`
 
-`buildkitd` 有两种可用的 `worker`，一个是 `runc` ，一个是 `containerd` ；默认使用 `runc` ，在 `buildkitd` 参数中为 `oci-worker`。
+buildkit 守护进程 `buildkitd` 有两种可用的 `worker`，一个是 `OCI(runc)` ，一个是 `containerd` ；默认使用 `OCI(runc)` ，在 `buildkitd` 参数中为 `oci-worker`。
 
 使用 `containerd` 作为 `worker`，需要增加 `--oci-worker=false --containerd-worker=true` 参数。
 
@@ -203,8 +217,7 @@ $ nerdctl run -d --name nginx -p 8080:80 nginx:alpine
 
 # 镜像加速
 
-> 目前很多文章抄来抄去的，把很多本来很好的文章全整烂了，无奈。
-> 就比如这个Containerd加速，k8s和单纯containerd的加速配置不是完全一样的。下边我来讲。
+> Containerd加速，k8s和单纯containerd的加速配置不是完全一样的。
 
 ## containerd
 
@@ -253,7 +266,7 @@ DEBU[0000] do request                host=docker.wanpeng.top request.header.acce
 
 ## k8s
 
-k8s使用 `crictl` 所以需要在 Containerd 的配置文件中指定 `config_path`
+在k8s中使用 `crictl` 命令拉取镜像，则需要在 Containerd 的配置文件中指定 `config_path`
 
 ```bash
 containerd config default > /etc/containerd/config.toml
