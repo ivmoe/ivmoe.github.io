@@ -225,6 +225,18 @@ ansible 主机组 -m shell -a '需要批量执行的命令'
 ansible web -m shell -a 'ls /tmp|grep 123'
 ```
 
+{% note warning flat %}
+那有人可能就会问了，command和shell模块有什么区别呢？
+
+`command`和`shell`在多数情况下可以完成一样的工作，但还是有一些区别的。
+
+ - command 模块命令将不会使用 shell 执行. 因此, 像 $HOME 这样的变量是不可用的。还有像`<`, `>`, `|``, `;`, `&`都将不可用。
+
+ - shell 模块通过shell程序执行， 默认是`/bin/sh`, 符号 `<`, `>`, `|`, `;`, `&` 可用。但这样有潜在的 shell 注入风险。
+
+command 模块相对 shell 来说会更安全，但是我们在实际工作中要多使用相应的模块，尽可能避免使用 command 和 shell 这两个模块。
+{% endnote %}
+
 ## 4.copy  拷贝文件
 
 
