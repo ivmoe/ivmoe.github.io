@@ -3,7 +3,7 @@ title: DockerFile详解-构建简单高效的容器镜像
 categories:
   - 笔记
 tags:
-  - docker
+  - Docker
 abbrlink: 1077
 date: 2024-11-22 09:41:54
 updated: 

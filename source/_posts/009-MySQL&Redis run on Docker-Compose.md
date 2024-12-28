@@ -3,7 +3,7 @@ title: Use Docker-Compose to run Mysql8.0 and Redis
 categories:
   - 笔记
 tags:
-  - docker
+  - Docker
 abbrlink: 13078
 date: 2024-11-05 18:35:26
 updated: 2024-11-12 15:35:10

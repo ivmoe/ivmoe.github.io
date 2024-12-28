@@ -31,6 +31,11 @@ date: 2024-10-15 21:03:09
       avatar: https://regexlearn.com/Done.webp
       descr: 逐步学习正则表达式，从零基础到高阶。
 
+    - name: 廖雪峰的Git教程
+      link: https://liaoxuefeng.com/books/git/introduction/index.html
+      avatar: https://git-scm.com/images/logos/logomark-orange@2x.png
+      descr: 廖雪峰的Git教程
+
 {% endflink %}
 ---
 {% flink %}
