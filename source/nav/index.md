@@ -15,8 +15,6 @@ date: 2024-10-15 21:03:09
   class_desc: 快速步入AI的世界
   link_list:
     
-    > 本地跑模型必不可少的易用工具
-
     - name: Ollama
       link: https://ollama.com/
       avatar: https://ollama.com/public/ollama.png
@@ -26,9 +24,6 @@ date: 2024-10-15 21:03:09
       link: https://lmstudio.ai/
       avatar: https://lmstudio.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flmmy.391b83df.png&w=1080&q=75
       descr: Discover, download, and run local LLMs
-    ---
-
-    > 大模型
 
     - name: 深度求索DeepSeek
       link: https://www.deepseek.com/
