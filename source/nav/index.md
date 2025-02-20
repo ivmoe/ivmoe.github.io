@@ -25,6 +25,17 @@ date: 2024-10-15 21:03:09
       avatar: https://lmstudio.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flmmy.391b83df.png&w=1080&q=75
       descr: Discover, download, and run local LLMs
 
+    - name: Cherry Studio
+      link: https://cherry-ai.com/
+      avatar: https://cherry-ai.com/assets/favicon-BmbgeFTf.png
+      descr: 全能的AI助手
+
+    - name: Chatbox AI
+      link: https://chatboxai.app/
+      avatar: https://chatboxai.app/icon.png
+      descr: 办公学习好助手
+
+
     - name: 深度求索DeepSeek
       link: https://www.deepseek.com/
       avatar: https://www.deepseek.com/favicon.ico
