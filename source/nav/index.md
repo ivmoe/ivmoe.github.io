@@ -9,7 +9,34 @@ date: 2024-10-15 21:03:09
 在这里我会分几大类，将我认为我需要的网站写在这里，如果对你有所帮助，那将会是我的荣幸！
 {% endnote %}
 
+{% flink %}
 
+- class_name: AI人工智能
+  class_desc: 快速步入AI的世界
+  link_list:
+    
+    > 本地跑模型必不可少的易用工具
+
+    - name: Ollama
+      link: https://ollama.com/
+      avatar: https://ollama.com/public/ollama.png
+      descr: Get up and running with large language models.
+
+    - name: LM Studio
+      link: https://lmstudio.ai/
+      avatar: https://lmstudio.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flmmy.391b83df.png&w=1080&q=75
+      descr: Discover, download, and run local LLMs
+    ---
+
+    > 大模型
+
+    - name: 深度求索DeepSeek
+      link: https://www.deepseek.com/
+      avatar: https://www.deepseek.com/favicon.ico
+      descr: 探索未至之境
+
+{% endflink %}
+---
 {% flink %}
 
 - class_name: IT技术
