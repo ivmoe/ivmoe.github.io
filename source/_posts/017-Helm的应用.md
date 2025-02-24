@@ -12,12 +12,12 @@ sticky:
 ---
 
 # Helm简介
-:::info
+{% note info no-icon %}
 官网：[https://helm.sh/zh/](https://helm.sh/zh/)
 
 仓库：[https://github.com/helm/helm](https://github.com/helm/helm)
 
-:::
+{% endnote %}
 
 Helm 是 Kubernetes 的包管理器，类似CentOS 的yum、dnf，类似Ubuntu的apt。概括起来就是**优雅**。
 
@@ -198,8 +198,6 @@ alues通过模板中.Values对象可访问的values.yaml文件（或者通过 --
 
 
 以下值是预定义的，对每个模板都有效，并且可以被覆盖。和所有值一样，名称 区分大小写。
-
-
 
 + `Release.Name`: 版本名称(非chart的)
 + `Release.Namespace`: 发布的chart版本的命名空间
@@ -441,10 +439,10 @@ This is Kelvyn's Test Helm Package, Welcome to Test!!!
 ```
 
 # 基于 Helm 升级 Chart 的 Release
-:::info
+{% note info no-icon %}
 **官方文档：** [https://helm.sh/zh/docs/helm/helm_upgrade/](https://helm.sh/zh/docs/helm/helm_upgrade/)
 
-:::
+{% endnote %}
 
 ## 概述
 ```latex
@@ -459,7 +457,7 @@ This is Kelvyn's Test Helm Package, Welcome to Test!!!
     如下图所示，对比了基于yaml配置文件和基于命令行方式升级Release的差别。
 ```
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2921054/1740316382671-a0adc20d-b7b7-4429-a014-78f77f819222.png)
+![](https://imgse.com/i/pE1AQ8U)
 
 ## 基于配置文件升级
 `helm upgrade` 使用 `-f` 参数升级：
@@ -576,7 +574,7 @@ $ helm history kelvyn-nginx -n kelvyn-helm
 # 副本数变回了2
 ```
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2921054/1740319491727-5890de82-33ad-4b2b-95eb-4b8b32401eec.png)
+![](https://imgse.com/i/pE1APC8)
 
 ## 回滚到指定版本
 ```bash
@@ -601,7 +599,7 @@ REVISION        UPDATED                         STATUS          CHART           
 5               Sun Feb 23 22:06:13 2025        deployed        kelvyn-chart-0.1.0      1.16.0          Rollback to 1
 ```
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2921054/1740319689447-48f79f76-e9a1-4477-bbb0-18494721fb99.png)
+![](https://imgse.com/i/pE1ApUP)
 
 # 公有仓库管理及使用
 ## 主流仓库
@@ -701,19 +699,19 @@ $ kubectl get pods -o wide  # 查看MySQL的IP地址
 $ mysql -h 10.244.1.35 -p`kubectl get secret --namespace default kelvyn-mysql-mysql -o jsonpath="{.data.mysql-root-password}" | base64 -d`
 ```
 
-:::color4
+{% note warning no-icon %}
 **还得记得注意，修改文件 values.yaml 中的 image 值**！！！！！！
 
-:::
+{% endnote %}
 
 # 私有仓库搭建及使用
 ## 使用 docker 部署 ChartMuseum 私有 Chart 仓库
-:::info
+{% note info no-icon %}
 **ChartMuseum官网：**[https://chartmuseum.com/](https://chartmuseum.com/)
 
 **项目地址：**[https://github.com/helm/chartmuseum](https://github.com/helm/chartmuseum)
 
-:::
+{% endnote %}
 
 ```bash
 # 创建持久化目录
@@ -738,7 +736,7 @@ $ curl http://192.168.1.51:8090/
 $ chmod 777 /data/chartmuseum
 ```
 
-![](https://cdn.nlark.com/yuque/0/2025/png/2921054/1740382402983-23585fca-18b7-4e43-9e59-c085bb60d124.png)
+![](https://imgse.com/i/pE1A94f)
 
 
 
