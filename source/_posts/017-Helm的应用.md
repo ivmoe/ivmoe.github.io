@@ -457,7 +457,7 @@ This is Kelvyn's Test Helm Package, Welcome to Test!!!
     如下图所示，对比了基于yaml配置文件和基于命令行方式升级Release的差别。
 ```
 
-![](https://imgse.com/i/pE1AQ8U)
+![](https://s21.ax1x.com/2025/02/24/pE1AQ8U.webp)
 
 ## 基于配置文件升级
 `helm upgrade` 使用 `-f` 参数升级：
@@ -574,7 +574,7 @@ $ helm history kelvyn-nginx -n kelvyn-helm
 # 副本数变回了2
 ```
 
-![](https://imgse.com/i/pE1APC8)
+![](https://s21.ax1x.com/2025/02/24/pE1APC8.webp)
 
 ## 回滚到指定版本
 ```bash
@@ -599,7 +599,7 @@ REVISION        UPDATED                         STATUS          CHART           
 5               Sun Feb 23 22:06:13 2025        deployed        kelvyn-chart-0.1.0      1.16.0          Rollback to 1
 ```
 
-![](https://imgse.com/i/pE1ApUP)
+![](https://s21.ax1x.com/2025/02/24/pE1ApUP.webp)
 
 # 公有仓库管理及使用
 ## 主流仓库
@@ -736,7 +736,7 @@ $ curl http://192.168.1.51:8090/
 $ chmod 777 /data/chartmuseum
 ```
 
-![](https://imgse.com/i/pE1A94f)
+![](https://s21.ax1x.com/2025/02/24/pE1A94f.webp)
 
 
 
