@@ -19,7 +19,7 @@ sticky:
 
 :::
 
-Helm 是 Kubernetes 的包管理器，类似CentOS 的yum、dnf，类似Ubuntu的apt。一个字包括就是**<font style="color:#7E45E8;">优雅</font>**。
+Helm 是 Kubernetes 的包管理器，类似CentOS 的yum、dnf，类似Ubuntu的apt。概括起来就是**优雅**。
 
 
 
@@ -109,7 +109,7 @@ wordpress/
 Helm保留使用 charts/，crds/， templates/目录，以及列举出的文件名。其他文件保持原样。
 
 ## Chart.yaml 文件说明
-`<font style="color:#DF2A3F;background-color:rgb(250, 250, 250);">Chart.yaml</font>`<font style="color:rgb(51, 51, 51);">文件是chart必需的。包含了以下字段：</font>
+`Chart.yaml</font>` 文件是chart必需的。包含了以下字段：
 
 ```yaml
 apiVersion: chart API 版本 （必需）
