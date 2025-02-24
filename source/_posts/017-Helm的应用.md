@@ -27,11 +27,11 @@ Helm 工作流程的概述：
 
 > helm有以下几个核心功能:
 >
->         (1)将变量从"value.yaml"文件中获取，并渲染到chart模板文件中;
+>   (1)将变量从"value.yaml"文件中获取，并渲染到chart模板文件中;
 >
->         (2)chart模板文件对应的是一系列yaml文件，会基于这些yaml清单来部署应用到kuberntes集群;
+>   (2)chart模板文件对应的是一系列yaml文件，会基于这些yaml清单来部署应用到kuberntes集群;
 >
->         (3)helm也有其对应的Chart仓库，这些公共仓库是一些其他开发或者运维人员编写好的chart，如果他们写的chart在我们工作中能用到就是最好的了;
+>   (3)helm也有其对应的Chart仓库，这些公共仓库是一些其他开发或者运维人员编写好的chart，如果他们写的chart在我们工作中能用到就是最好的了;
 >
 
 # Helm安装
@@ -182,18 +182,18 @@ spec:
 
 
 
-imageRegistry: Docker镜像的源注册表
+`imageRegistry`: Docker镜像的源注册表
 
-dockerTag: Docker镜像的tag
+`dockerTag`: Docker镜像的tag
 
-pullPolicy: Kubernetes的拉取策略
+`pullPolicy`: Kubernetes的拉取策略
 
-storage: 后台存储，默认设置为"minio"
+`storage`: 后台存储，默认设置为"minio"
 
 所有的值都是模板作者定义的。Helm不需要或指定参数。
 
 ## 预定义的values
-alues通过模板中.Values对象可访问的values.yaml文件（或者通过 --set 参数)提供， 但可以模板中访问其他预定义的数据片段。
+values通过模板中.Values对象可访问的values.yaml文件（或者通过 --set 参数)提供， 但可以模板中访问其他预定义的数据片段。
 
 
 
@@ -228,7 +228,7 @@ storage: "s3"
 $ mkdir -p /helm_data && cd /helm_data 
 $ helm create kelvyn-chart
 $ cd kelvyn-chart/templates/
-rm -rf *.yaml tests
+$ rm -rf *.yaml tests
 
 ```
 
@@ -521,7 +521,7 @@ $ curl -I 10.98.56.127
 ## 基于命令行升级
 以多次指定'--set'参数，最后（最右边）指定的优先级最高。比如'bar' 和 'newbar'都设置了一个名为'foo'的可以， 'newbar'的值会优先使用：
 
-    `$ helm upgrade --set foo=bar --set foo=newbar redis ./redis`
+  `$ helm upgrade --set foo=bar --set foo=newbar redis ./redis`
 
 实战：
 
