@@ -109,7 +109,7 @@ wordpress/
 Helm保留使用 charts/，crds/， templates/目录，以及列举出的文件名。其他文件保持原样。
 
 ## Chart.yaml 文件说明
-`Chart.yaml</font>` 文件是chart必需的。包含了以下字段：
+`Chart.yaml` 文件是chart必需的。包含了以下字段：
 
 ```yaml
 apiVersion: chart API 版本 （必需）
@@ -207,8 +207,8 @@ alues通过模板中.Values对象可访问的values.yaml文件（或者通过 --
 + `Release.IsUpgrade`: 如果当前操作是升级或回滚，设置为true
 + `Release.IsInstall`: 如果当前操作是安装，设置为true
 + `Chart`: `Chart.yaml`的内容。因此，chart的版本可以从 Chart.Version 获得， 并且维护者在Chart.Maintainers里。
-+ `Files`: chart中的包含了非特殊文件的类图对象。这将不允许您访问模板， 但是可以访问现有的其他文件（除非被.helmignore排除在外）。 使用{{ index .Files "file.name" }}可以访问文件或者使用{{.Files.Get name }}功能。 您也可以使用{{ .Files.GetBytes }}作为[]byte访问文件内容。
-+ `Capabilities`: 包含了Kubernetes版本信息的类图对象。({{ .Capabilities.KubeVersion }}) 和支持的Kubernetes API 版本({{ .Capabilities.APIVersions.Has "batch/v1" }})
++ `Files`: chart中的包含了非特殊文件的类图对象。这将不允许您访问模板， 但是可以访问现有的其他文件（除非被.helmignore排除在外）。 使用{{ index .Files "file.name" }}可以访问文件或者使用`{{.Files.Get name }}`功能。 您也可以使用`{{ .Files.GetBytes }}`作为[]byte访问文件内容。
++ `Capabilities`: 包含了Kubernetes版本信息的类图对象。(`{{ .Capabilities.KubeVersion }}`) 和支持的Kubernetes API 版本(`{{ .Capabilities.APIVersions.Has "batch/v1" }}`)
 
 **注意：** 任何未知的Chart.yaml字段会被抛弃。在Chart对象中无法访问。因此， Chart.yaml不能用于将任意结构的数据传递到模板中。不过values文件可用于此。
 
@@ -462,7 +462,7 @@ This is Kelvyn's Test Helm Package, Welcome to Test!!!
 ![](https://cdn.nlark.com/yuque/0/2025/png/2921054/1740316382671-a0adc20d-b7b7-4429-a014-78f77f819222.png)
 
 ## 基于配置文件升级
-`<font style="color:rgb(0, 0, 0);background-color:rgb(240, 243, 243);">helm upgrade</font>`使用 `-f`参数升级：
+`helm upgrade` 使用 `-f` 参数升级：
 
 
 
