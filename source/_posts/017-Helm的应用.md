@@ -207,7 +207,7 @@ alues通过模板中.Values对象可访问的values.yaml文件（或者通过 --
 + `Release.IsUpgrade`: 如果当前操作是升级或回滚，设置为true
 + `Release.IsInstall`: 如果当前操作是安装，设置为true
 + `Chart`: `Chart.yaml`的内容。因此，chart的版本可以从 Chart.Version 获得， 并且维护者在Chart.Maintainers里。
-+ `Files`: chart中的包含了非特殊文件的类图对象。这将不允许您访问模板， 但是可以访问现有的其他文件（除非被.helmignore排除在外）。 使用{{ index .Files "file.name" }}可以访问文件或者使用`{{.Files.Get name }}`功能。 您也可以使用`{{ .Files.GetBytes }}`作为[]byte访问文件内容。
++ `Files`: chart中的包含了非特殊文件的类图对象。这将不允许您访问模板， 但是可以访问现有的其他文件（除非被`.helmignore`排除在外）。 使用`{{ index .Files "file.name" }}`可以访问文件或者使用`{{.Files.Get name }}`功能。 您也可以使用`{{ .Files.GetBytes }}`作为[]byte访问文件内容。
 + `Capabilities`: 包含了Kubernetes版本信息的类图对象。(`{{ .Capabilities.KubeVersion }}`) 和支持的Kubernetes API 版本(`{{ .Capabilities.APIVersions.Has "batch/v1" }}`)
 
 **注意：** 任何未知的Chart.yaml字段会被抛弃。在Chart对象中无法访问。因此， Chart.yaml不能用于将任意结构的数据传递到模板中。不过values文件可用于此。
@@ -658,13 +658,13 @@ mysql/
 ├── Chart.yaml
 ├── README.md
 ├── templates
-│   ├── configmap.yaml
-│   ├── deployment.yaml
-│   ├── _helpers.tpl
-│   ├── NOTES.txt
-│   ├── pvc.yaml
-│   ├── secrets.yaml
-│   └── svc.yaml
+│   ├── configmap.yaml
+│   ├── deployment.yaml
+│   ├── _helpers.tpl
+│   ├── NOTES.txt
+│   ├── pvc.yaml
+│   ├── secrets.yaml
+│   └── svc.yaml
 └── values.yaml
 
 # 修改 Deployment 的apiVersion 值 "extensions/v1beta1" 为 "apps/v1"
