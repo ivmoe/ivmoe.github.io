@@ -227,7 +227,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: Python工程师
+    description: 天选打工人
     button:
       enable: true
       icon: far fa-envelope
