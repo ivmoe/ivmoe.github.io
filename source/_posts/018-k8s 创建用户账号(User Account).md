@@ -170,6 +170,7 @@ $ rm -rf /k8s-user/kelvyn
 ```shell
 #! /bin/bash
 # Author: Kelvyn, Meng
+# Blog: https://ivmoe.github.io/
 # Date: 2025-02-25
 # Modified: 2025-02-25
 # Usage: sh k8s_UerAccount_create.sh
