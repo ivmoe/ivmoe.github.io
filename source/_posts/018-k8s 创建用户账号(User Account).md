@@ -165,12 +165,16 @@ $ rm -rf /k8s-user/kelvyn
 
 # 一键创建及删除脚本
 
-**注意**：默认绑定ClusterRole="cluster-admin"
+**注意**：默认绑定集群角色：`ClusterRole="cluster-admin"`
 
 ```shell
 #! /bin/bash
-# author: Kelvyn, Meng
-# date: 2025-02-25
+# Author: Kelvyn, Meng
+# Date: 2025-02-25
+# Modified: 2025-02-25
+# Usage: sh k8s_UerAccount_create.sh
+# Version: 1.0
+# Description: 创建 Kubernetes 用户账户
 
 # 以下变量需要修改，根据实际情况修改
 # KUBERNETES_USER: K8S 用户
