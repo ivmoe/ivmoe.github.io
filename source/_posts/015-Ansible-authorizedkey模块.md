@@ -6,7 +6,7 @@ tags:
   - Ansible
 abbrlink: 53862
 date: 2024-11-24 22:18:33
-updated: 
+updated: 2025-2-25 22:47:37
 sticky: 
 ---
 
@@ -20,7 +20,7 @@ sticky:
 
 ```bash
 # 生成密钥对
-ssh-keygen -t rsa -C kelvyn@gehealthcare.com
+ssh-keygen -t rsa -C kelvyn@ge.com
 
 # 复制公钥到目标服务器
 ssh-copy-id -i id_rsa.pub root@192.168.1.100
@@ -35,7 +35,7 @@ cat /root/.ssh/authorized_keys
 
 ```bash
 # 生成密钥对
-ssh-keygen -t rsa -C kelvyn@gehealthcare.com
+ssh-keygen -t rsa -C kelvyn@ge.com
 
 # 暂且认为生成的文件为 /root/id_rsd.pub
 ```

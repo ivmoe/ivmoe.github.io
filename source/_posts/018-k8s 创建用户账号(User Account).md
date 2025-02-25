@@ -6,7 +6,7 @@ tags:
   - Kubernetes
 abbrlink: 100018
 date: 2025-2-25 22:06:09
-updated: 2025-2-25 22:06:16
+updated: 2025-2-25 22:48:12
 sticky: 
 ---
 
@@ -21,7 +21,7 @@ mkdir -p /k8s-user/kelvyn && cd /k8s-user/kelvyn
 (umask 077;openssl genrsa -out kelvyn.key 2048)
 
 # 2. 创建签名请求文件
-openssl req -new -key kelvyn.key -out kelvyn.csr -subj "/C=CN/ST=Beijing/L=Beijing/O=GEHealthCare/OU=Digital/CN=kelvyn"
+openssl req -new -key kelvyn.key -out kelvyn.csr -subj "/C=CN/ST=Beijing/L=Beijing/O=GE/OU=CT/CN=kelvyn"
 
 # 3. 签发证书（期限一年）
 openssl  x509 -req -in kelvyn.csr -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out kelvyn.crt -days 365
