@@ -167,6 +167,216 @@ $ rm -rf /k8s-user/kelvyn
 
 **注意**：默认绑定集群角色：`ClusterRole="cluster-admin"`
 
+- 版本：v1.1（这个暂时没有经过测试，过两天再说吧，2025-03-04）
+```shell
+#! /bin/bash
+# Author: Kelvyn, Meng
+# Blog: https://ivmoe.github.io/
+# Date: 2025-02-25
+# Modified: 2025-02-25
+# Usage: sh k8s_UerAccount_create.sh
+# Description: 创建 Kubernetes 用户账户
+# Version: 1.1
+# ReleaseLog:
+#   1.0: Init: 创建 Kubernetes 用户账户 Script
+#   1.1: Added: 修改全局脚本中断指令: set -e; 在用户配置文件目录下增加删除用户脚本
+
+
+# 以下变量需要修改，根据实际情况修改
+# KUBERNETES_USER: K8S 用户
+# USER_CERT_EXPIRE: K8S 用户证书有效期，单位：天
+# USER_CONFIG_PATH: K8S 用户配置文件路径
+# KUBERNETES_APISERVER: K8S API Server 地址
+# KUBERNETES_NAME: K8S集群名称
+# KUBERNETES_PKI_PATH: K8S PKI 证书路径
+
+set -e
+
+KUBERNETES_USER="kelvyn"
+USER_CERT_EXPIRE="365"
+USER_CONFIG_PATH="/k8s-user"
+KUBERNETES_NAME="k8s"
+KUBERNETES_APISERVER="https://192.168.1.55:6443"
+KUBERNETES_PKI_PATH="/etc/kubernetes/pki"
+
+# 以下变量无需修改，或者根据实际情况修改
+KUBERNETES_CA_PATH="${KUBERNETES_PKI_PATH}/ca.crt"
+KUBERNETES_CA_KEY_PATH="${KUBERNETES_PKI_PATH}/ca.key"
+USER_KEY_FILE="${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.key"
+USER_CSR_FILE="${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.csr"
+USER_CERT_FILE="${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.crt"
+
+
+CREATE_USER_CONFIG() {
+    echo "-----> INFO: 创建用户配置文件"
+
+    if [ ! -e ${USER_CONFIG_PATH}/${KUBERNETES_USER} ]; then
+        mkdir -p ${USER_CONFIG_PATH}/kelvyn
+    fi
+
+    # 1. 创建私钥
+    if [[ ! $(type openssl) ]]; then
+        echo "-----> ERROR: openssl 工具未安装, 请安装后继续"
+        echo "-----> INFO: Debian 系: apt install -y openssl"
+        echo "-----> INFO: RedHat 系: yum install -y openssl 或 dnf install -y openssl"
+        exit 1
+    fi
+    openssl genrsa -out ${USER_KEY_FILE} 2048
+
+    # 2. 创建证书请求
+    openssl req -new -key ${USER_KEY_FILE} -out ${USER_CSR_FILE} -subj "/CN=${KUBERNETES_USER}/O=system:masters"
+
+    # 3. 生成证书
+    openssl x509 -req \
+        -in ${USER_CSR_FILE} \
+        -CA ${KUBERNETES_CA_PATH} \
+        -CAkey ${KUBERNETES_CA_KEY_PATH} \
+        -CAcreateserial \
+        -out ${USER_CERT_FILE} -days ${USER_CERT_EXPIRE}
+
+    # 4. 创建 kubeconfig 文件
+    kubectl config set-cluster ${KUBERNETES_NAME} \
+        --certificate-authority=${KUBERNETES_CA_PATH} \
+        --embed-certs=true \
+        --server=${KUBERNETES_APISERVER} \
+        --kubeconfig=${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.kubeconfig
+
+    # 5. 设置客户端认证
+    kubectl config set-credentials ${KUBERNETES_USER} \
+        --client-certificate=${USER_CERT_FILE} \
+        --client-key=${USER_KEY_FILE} \
+        --embed-certs=true \
+        --kubeconfig=${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.kubeconfig
+
+    # 6. 设置上下文 Conetxt
+    kubectl config set-context ${KUBERNETES_USER}@${KUBERNETES_NAME} \
+        --cluster=${KUBERNETES_NAME} \
+        --user=${KUBERNETES_USER} \
+        --kubeconfig=${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.kubeconfig
+
+    # 7. 设置默认上下文
+    kubectl config use-context ${KUBERNETES_USER}@${KUBERNETES_NAME} \
+        --kubeconfig=${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.kubeconfig
+}
+
+AFTER_CREATE_USER() {
+    # 创建删除用户脚本
+    cat << EOF > ${USER_CONFIG_PATH}/${KUBERNETES_USER}/delete_k8s_user_${KUBERNETES_USER}.sh
+#! /bin/bash
+# 删除用户配置文件 
+read -rp "-----> INFO: 确认删除用户 ${KUBERNETES_USER} 配置文件? (y/n): " answer
+case $answer in
+    y|Y)
+        kubectl delete clusterrolebinding ${KUBERNETES_USER}-cluster-admin-binding
+        rm -rf ${USER_CONFIG_PATH}/${KUBERNETES_USER}
+        echo "-----> INFO: 用户 ${KUBERNETES_USER} 删除成功!"
+        ;;
+    n|N)
+        echo "-----> INFO: 选择不删除用户 ${KUBERNETES_USER} !"
+        ;;
+    *)
+        echo "-----> ERROR: 请输入 y 或 n"
+        ;;
+esac
+EOF
+    chmod +x ${USER_CONFIG_PATH}/${KUBERNETES_USER}/delete_user.sh
+    echo "-----> INFO: 删除用户脚本创建成功!"
+    echo "-----> INFO: 删除用户脚本路径：${USER_CONFIG_PATH}/${KUBERNETES_USER}/delete_k8s_user_${KUBERNETES_USER}.sh"
+}
+
+BIND_ROLE() {
+    echo "-----> INFO: 绑定 Kubernetes User 到 ClusterRole.cluster-admin 角色"
+    
+    if ! kubectl get clusterrolebinding ${KUBERNETES_USER}-cluster-admin-binding > /dev/null 2>&1; then
+        kubectl create clusterrolebinding ${KUBERNETES_USER}-cluster-admin-binding \
+        --clusterrole=cluster-admin \
+        --user=${KUBERNETES_USER}
+    fi
+
+#     cat << EOF | kubectl apply -f - 
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRoleBinding
+# metadata:
+#   name: ${KUBERNETES_USER}-cluster-admin-binding
+# roleRef:
+#   apiGroup: rbac.authorization.k8s.io
+#   kind: ClusterRole
+#   name: cluster-admin
+# subjects:
+# - apiGroup: rbac.authorization.k8s.io
+#   kind: User
+#   name: ${KUBERNETES_USER}
+# EOF
+}
+
+ENDING() {
+    if [[ $? -eq 0 ]]; then
+        echo
+        echo "############################################################################################################################"
+        echo
+        echo "-----> INFO: Kubernetes User 创建完成!"
+        echo "-----> Kubernetes User: ${KUBERNETES_USER}"
+        echo "-----> K8S 用户有效期：${USER_CERT_EXPIRE} 天"
+        echo "-----> kubeconfig 文件路径：${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.kubeconfig"
+        echo "-----> 登录集群两种办法："
+        echo "----->   方式一：切换当前上下文"
+        echo "          $ kubectl config use-context ${KUBERNETES_USER}@${KUBERNETES_NAME} --kubeconfig=${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.kubeconfig"
+        echo "----->   方式二：执行 kubectl 命令时, 指定 kubeconfig 文件路径"
+        echo "          $ kubectl CMD --kubeconfig=${USER_CONFIG_PATH}/${KUBERNETES_USER}/${KUBERNETES_USER}.kubeconfig"
+        echo "-----> 创建 Kubernetes User 脚本执行完毕!"
+        exit 0
+    else
+        echo "-----> Kubernetes User 创建失败!"
+        exit 1
+    fi
+    
+}
+
+DELETE_USER() {
+    echo "-----> INFO: 删除集群中的 RoleBinding"
+    kubectl delete clusterrolebinding ${KUBERNETES_USER}-cluster-admin-binding
+
+    echo "-----> WARNING: 删除用户配置文件"
+    # 检查 USER_CONFIG_PATH 和 KUBERNETES_USER 是否为空
+    if [[ -z "${USER_CONFIG_PATH}" || -z "${KUBERNETES_USER}" ]]; then
+        echo "-----> ERROR: 变量 USER_CONFIG_PATH 或 KUBERNETES_USER 未设置或为空"
+        exit 1
+    fi
+
+    # 使用 ${var:?} 确保路径不为空
+    rm -rf "${USER_CONFIG_PATH:?}/${KUBERNETES_USER:?}"
+    echo "-----> INFO: 删除用户配置文件成功!"
+    echo "-----> INFO: 集群用户 ${KUBERNETES_USER} 删除成功!"
+    echo "-----> INFO: 删除 Kubernetes User 脚本执行完毕!"
+    exit 0
+}
+
+main() {
+    echo "###### Date: $(date) ######"
+    read -rp '-----> INFO: 创建用户"1", 删除用户"2": ' answer
+    echo
+    case ${answer} in
+        1)
+            CREATE_USER_CONFIG
+            BIND_ROLE
+            AFTER_CREATE_USER
+            ENDING
+            ;;
+        2)
+            DELETE_USER
+            ;;
+        *)
+            echo "----->ERROR: 请输入正确的选项: 1 或 2"
+            exit 1
+            ;;
+    esac
+    
+}
+
+main | tee -a /tmp/k8s_user_create.log
+```
+
+- 版本：v1.0
 ```shell
 #! /bin/bash
 # Author: Kelvyn, Meng

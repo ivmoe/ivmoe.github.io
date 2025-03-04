@@ -35,11 +35,20 @@ date: 2024-10-15 21:03:09
       avatar: https://chatboxai.app/icon.png
       descr: 办公学习好助手
 
+    - name: Cline
+      link: https://cline.bot/faq
+      avatar: https://avatars.githubusercontent.com/u/184127137?s=48&v=4
+      descr: VScode AI 编程插件
 
     - name: 深度求索DeepSeek
       link: https://www.deepseek.com/
       avatar: https://www.deepseek.com/favicon.ico
       descr: 探索未至之境
+
+    - name: Kubeflow
+      link: https://www.kubeflow.org/
+      avatar: https://www.kubeflow.org/favicon.ico?v=2
+      descr: 适用于 K8S 的分布式机器学习(ML)工具包
 
 {% endflink %}
 ---
