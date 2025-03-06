@@ -449,10 +449,10 @@ This is Kelvyn's Test Helm Package, Welcome to Test!!!
 为了实现Chart复用，可动态传参修改"values.yaml"文件中的变量值，有以下两种方式:
 	--values,-f:
 		基于yaml配置文件方式升级Release。
-		例如:"helm upgrade  -f /oldboyedu/data/oldboyedu-nginx/values.yaml myweb02 /oldboyedu/data/oldboyedu-nginx"
+		例如:"helm upgrade  -f //helm_data/kelvyn-chart/values.yaml kelvyn-nginx /helm_data/kelvyn-chart"
 		
 	--set:
-		基于命令行方式升级Release。例如:"helm upgrade --set imageTag=1.18 myweb02 /oldboyedu/data/oldboyedu-nginx"
+		基于命令行方式升级Release。例如:"helm upgrade --set imageTag=1.18 kelvyn-nginx /helm_data/kelvyn-chart"
 
     如下图所示，对比了基于yaml配置文件和基于命令行方式升级Release的差别。
 ```
