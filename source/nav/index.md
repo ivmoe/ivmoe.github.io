@@ -20,6 +20,11 @@ date: 2024-10-15 21:03:09
       avatar: https://ollama.com/public/ollama.png
       descr: Get up and running with large language models.
 
+    - name: AI 工具集
+      link: https://ai-bot.cn/
+      avatar: https://ai-bot.cn/wp-content/uploads/2023/03/ai-bot-square-logo.png
+      descr: 1000+ AI工具集合，国内外AI工具集导航大全
+
     - name: LM Studio
       link: https://lmstudio.ai/
       avatar: https://lmstudio.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flmmy.391b83df.png&w=1080&q=75
@@ -29,11 +34,6 @@ date: 2024-10-15 21:03:09
       link: https://cherry-ai.com/
       avatar: https://cherry-ai.com/assets/favicon-BmbgeFTf.png
       descr: 全能的AI助手
-
-    - name: Chatbox AI
-      link: https://chatboxai.app/
-      avatar: https://chatboxai.app/icon.png
-      descr: 办公学习好助手
 
     - name: Cline
       link: https://cline.bot/faq
@@ -49,6 +49,16 @@ date: 2024-10-15 21:03:09
       link: https://www.kubeflow.org/
       avatar: https://www.kubeflow.org/favicon.ico?v=2
       descr: 适用于 K8S 的分布式机器学习(ML)工具包
+
+    - name: Dify
+      link: https://dify.ai/zh
+      avatar: https://framerusercontent.com/images/5DjvEqzd8wAijK6D0yeFokYMteE.svg
+      descr: 企业级 Agentic AI 解决方案开发平台
+
+    - name: n8n
+      link: https://n8n.io/
+      avatar: https://docs.n8n.io/_images/n8n-docs-icon.svg
+      descr: Flexible AI workflow automation for technical teams
 
 {% endflink %}
 ---
@@ -77,6 +87,16 @@ date: 2024-10-15 21:03:09
       link: https://liaoxuefeng.com/books/git/introduction/index.html
       avatar: https://git-scm.com/images/logos/logomark-orange@2x.png
       descr: 廖雪峰的Git教程
+
+    - name: 毫秒镜像
+      link: https://1ms.run/
+      avatar: https://1ms.run/favicon.ico
+      descr: 专为中国开发者的Docker镜像极速下载
+
+    - name: 渡渡鸟镜像同步站
+      link: https://docker.aityp.com/
+      avatar: https://docker.aityp.com/static/svg/logo.svg
+      descr: 为国内用户提供gcr.io,docker.io等容器镜像查询同步服务
 
 {% endflink %}
 ---
