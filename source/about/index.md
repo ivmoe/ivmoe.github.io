@@ -9,10 +9,14 @@ comments: false
 
 **联系方式：** im.kelvyn#outlook.com（#换成@）
 
-**开发工具：** [VSCode](https://code.visualstudio.com/)、[PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows)、[Mobaxterm](https://mobaxterm.mobatek.net/download.html)、
+**开发工具：** [VSCode](https://code.visualstudio.com/)、[PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows)、[Mobaxterm](https://mobaxterm.mobatek.net/download.html)、[Apifox](https://apifox.com/)、[欧路词典](https://dict.eudic.net/)（专门用来起变量名😂）
+
 **使用字体：** [FiraCode](https://github.com/tonsky/FiraCode/releases)、[JetBrains Mono](https://www.jetbrains.com/lp/mono/)、[更纱黑体（开发用）](https://github.com/be5invis/Sarasa-Gothic/releases)、[阿里普惠体](https://www.alibabafonts.com/#/font)
-**系统工具：** [7-Zip](https://www.7-zip.org/)、[PixPin](https://pixpin.cn/)、[PicView](https://picview.org/)、[Notepad3](https://github.com/rizonesoft/Notepad3/releases)、[VMware Workstation Pro](https://www.puresys.net/637.html)、[WinScp](https://winscp.net/eng/docs/lang:chs)、[极客侧边栏](https://www.geeksidebar.com/)
-**知识工具：** [Typora](https://typoraio.cn/)、[SublimeText](https://www.sublimetext.com/)、[语雀](https://www.yuque.com/)、[知犀](https://www.zhixi.com/)、[闪点清单](https://nartick.com/zh-CN/)、[steamcommunity 302](https://www.dogfight360.com/blog/18682/)
+
+**系统工具：** [7-Zip](https://www.7-zip.org/)、[PixPin](https://pixpin.cn/)、[PicView](https://picview.org/)、[Notepad3](https://github.com/rizonesoft/Notepad3/releases)、[VMware Workstation Pro](https://www.puresys.net/637.html)、[WinScp](https://winscp.net/eng/docs/lang:chs)、[极客侧边栏](https://www.geeksidebar.com/)、[steamcommunity 302](https://www.dogfight360.com/blog/18682/)、[Everything](https://www.voidtools.com/zh-cn/support/everything/)、
+
+**知识工具：** [Typora](https://typoraio.cn/)、[SublimeText](https://www.sublimetext.com/)、[语雀](https://www.yuque.com/)、[知犀](https://www.zhixi.com/)、[闪点清单](https://nartick.com/zh-CN/)
+
 
 <iframe id="embed_dom" name="embed_dom" frameborder="0" style="display:block;width:600px;height:600px;" src="https://www.zhixi.com/embed/fc2301b8#"></iframe>
 
