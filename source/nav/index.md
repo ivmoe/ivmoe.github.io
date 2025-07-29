@@ -106,6 +106,11 @@ date: 2024-10-15 21:03:09
   class_desc: 关于电脑的一些网站
   link_list:
 
+    - name: Microsoft Activation Scripts (MAS)
+      link: https://massgrave.dev/
+      avatar: https://massgrave.dev/img/favicon.ico
+      descr: Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.
+
     - name: DriverPack
       link: https://driverpack.io/zh-cn
       avatar: https://cdn.lo4d.com/t/icon/128/driverpack-solution.png
