@@ -27,7 +27,7 @@ date: 2024-10-15 21:03:09
 
     - name: LM Studio
       link: https://lmstudio.ai/
-      avatar: https://lmstudio.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flmmy.391b83df.png&w=1080&q=75
+      avatar: https://lmstudio.ai/_next/static/media/android-chrome-192x192.3a60873f.png
       descr: Discover, download, and run local LLMs
 
     - name: Cherry Studio
